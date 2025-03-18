@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculateur & Convertisseur Réseau</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="intro-animation" id="intro">
+        <div class="loader">Chargement...</div>
+    </div>
+    <div class="container" id="main-content" style="display: none;">
+        <h1>SUBNETFINDER</h1>
+        
+        <!-- Onglets -->
+        <div class="tabs">
+            <button class="tab-button active" onclick="showTab('subnet-tab')">Calculateur</button>
+            <button class="tab-button" onclick="showTab('convert-tab')">Convertisseur</button>
+            <button class="tab-button" onclick="showTab('notes-tab')">Bloc-notes</button>
+        </div>
+
+        <!-- Contenu des onglets -->
+        <div class="tab-content" id="subnet-tab">
+            <h2>Calculateur de Sous-Réseaux</h2>
+            <div class="form-group">
+                <label for="ip">Adresse IP (ex: 192.168.1.0)</label>
+                <input type="text" id="ip" placeholder="192.168.1.0">
+            </div>
+            <div class="form-group">
+                <label for="mask">Masque de sous-réseau (/xx ou xxx.xxx.xxx.xxx)</label>
+                <input type="text" id="mask" placeholder="/24 ou 255.255.255.0">
+            </div>
+            <button onclick="calculateSubnet()">Calculer</button>
+            <div id="subnet-result" class="result">
+                <div class="result-item">Adresse réseau: <span id="network"></span></div>
+                <div class="result-item">Première adresse: <span id="first"></span></div>
+                <div class="result-item">Dernière adresse: <span id="last"></span></div>
+                <div class="result-item">Adresse de broadcast: <span id="broadcast"></span></div>
+                <div class="result-item">Nombre d'hôtes: <span id="hosts"></span></div>
+                <div class="result-item">Numéro du sous-réseau: <span id="subnet-number"></span></div>
+            </div>
+        </div>
+
+        <div class="tab-content" id="convert-tab" style="display: none;">
+            <h2>Convertisseur Numérique</h2>
+            <div class="form-group">
+                <label for="input-value">Valeur à convertir</label>
+                <input type="text" id="input-value" placeholder="Entrez une valeur">
+            </div>
+            <div class="form-group">
+                <label for="from-base">Depuis</label>
+                <select id="from-base">
+                    <option value="dec">Décimal</option>
+                    <option value="bin">Binaire</option>
+                    <option value="hex">Hexadécimal</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="to-base">Vers</label>
+                <select id="to-base">
+                    <option value="dec">Décimal</option>
+                    <option value="bin">Binaire</option>
+                    <option value="hex">Hexadécimal</option>
+                </select>
+            </div>
+            <button onclick="convert()">Convertir</button>
+            <div id="convert-result" class="result">
+                <div class="result-item">Résultat: <span id="convert-output"></span></div>
+            </div>
+        </div>
+
+        <div class="tab-content" id="notes-tab" style="display: none;">
+            <h2>Bloc-notes</h2>
+            <div class="form-group">
+                <label for="notes">Vos notes (IP, masque, etc.)</label>
+                <textarea id="notes" placeholder="Entrez vos notes ici..." rows="6"></textarea>
+            </div>
+            <button onclick="saveNotes()">Sauvegarder</button>
+            <button onclick="clearNotes()">Effacer</button>
+        </div>
+
+        <footer>
+            Réalisé avec ❤️ par Antoine Sarrazin 
+            <a href="https://github.com/xNastouills" target="_blank" class="github-link">
+                <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" class="github-logo">
+            </a>
+        </footer>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
