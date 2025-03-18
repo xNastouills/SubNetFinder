@@ -12,9 +12,9 @@ Un outil web open source pour calculer des sous-réseaux, convertir des bases nu
 ## Aperçu
 [SubNetFinder Screenshot](screenshot.png)
 
-## Démarrage
+## Utilisation
 1. `git clone https://github.com/xNastouills/SubNetFinder.git`
-2. Ouvre `index.html` dans un navigateur.
+2. Ouvrir `index.html` dans un navigateur.
 
 ## Licence
 [MIT](LICENSE) - Réalisé avec ❤️ par Antoine Sarrazin.
